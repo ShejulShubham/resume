@@ -28,13 +28,23 @@
 % article class because we want to fully customize the page and not use a cv template
 \documentclass[a4paper,12pt]{article}
 
+% Ensure LaTeX will search our local fontawesome folder and that fontspec is loaded
 \makeatletter
-\def\input@path{{./}{texmf/tex/latex/fontawesome5/}{texmf/tex/latex/fontawesome5/tex/}}
+\def\input@path{{./}{texmf/tex/latex/fontawesome5/}{texmf/tex/latex/fontawesome5/tex/}{local/fontawesome5/}{local/fontawesome5/tex/}}
 \makeatother
 
-% Ensure local fonts are visible to XeTeX
-\defaultfontfeatures{Path=texmf/tex/latex/fontawesome5/}
+% Load fontspec (required for \defaultfontfeatures)
+\IfFileExists{fontspec.sty}{
+  \usepackage{fontspec}
+  \defaultfontfeatures{Path=texmf/tex/latex/fontawesome5/,Extension=.otf}
+}{%
+  % fallback: try to continue; but if fontspec missing, build will fail
+  \PackageWarning{local}{fontspec not found; font loading may fail}
+}
+
+% Now load FontAwesome (LaTeX will find helper files & fonts in input@path)
 \usepackage{fontawesome5}
+
 
 %----------------------------------------------------------------------------------------
 %	FONT
