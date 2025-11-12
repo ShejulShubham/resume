@@ -23,7 +23,7 @@ jobs:
           set -e
           mkdir -p build
           # list of tex files (edit this list to add/remove resumes)
-          FILES="shejul_shubham_mern.tex shejul_shubham_react.tex"
+          FILES="cv.tex cv_2.tex"
           
           for f in $FILES; do
             if [ -f "$f" ]; then
