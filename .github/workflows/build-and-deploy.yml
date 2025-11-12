@@ -13,17 +13,26 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install LaTeX
+      - name: Install LaTeX (texlive) + fonts + biblatex
         run: |
           sudo apt-get update -y
-          sudo apt-get install -y latexmk texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended texlive-xetex
+          sudo apt-get install -y \
+            latexmk \
+            texlive-latex-recommended \
+            texlive-latex-extra \
+            texlive-fonts-recommended \
+            texlive-xetex \
+            texlive-bibtex-extra \
+            biber \
+            fonts-lato fonts-raleway fontconfig
+
 
       - name: Compile all resumes
         run: |
           set -e
           mkdir -p build
           # list of tex files (edit this list to add/remove resumes)
-          FILES="cv.tex cv_2.tex"
+          FILES=$(ls *.tex)
           
           for f in $FILES; do
             if [ -f "$f" ]; then
