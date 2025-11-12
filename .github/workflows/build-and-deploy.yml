@@ -13,7 +13,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install LaTeX (texlive) + biblatex
+      - name: Install LaTeX (texlive) + extras
         run: |
           sudo apt-get update -y
           sudo apt-get install -y \
@@ -23,8 +23,10 @@ jobs:
             texlive-fonts-recommended \
             texlive-xetex \
             texlive-bibtex-extra \
+            texlive-fontawesome \
             biber \
             fontconfig
+
 
       - name: Compile all resumes
         run: |
