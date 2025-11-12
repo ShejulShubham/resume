@@ -31,8 +31,10 @@
 \makeatletter
 \def\input@path{{./}{texmf/tex/latex/fontawesome5/}{texmf/tex/latex/fontawesome5/tex/}}
 \makeatother
-\usepackage{fontawesome5}
 
+% Ensure local fonts are visible to XeTeX
+\defaultfontfeatures{Path=texmf/tex/latex/fontawesome5/}
+\usepackage{fontawesome5}
 
 %----------------------------------------------------------------------------------------
 %	FONT
