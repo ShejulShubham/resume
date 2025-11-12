@@ -23,9 +23,9 @@ jobs:
             texlive-fonts-recommended \
             texlive-xetex \
             texlive-bibtex-extra \
-            texlive-fontawesome \
             biber \
             fontconfig
+
 
 
       - name: Compile all resumes
