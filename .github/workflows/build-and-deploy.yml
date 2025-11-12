@@ -1,0 +1,44 @@
+name: Build and publish resumes
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install LaTeX
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y latexmk texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended texlive-xetex
+
+      - name: Compile all resumes
+        run: |
+          set -e
+          mkdir -p build
+          # list of tex files (edit this list to add/remove resumes)
+          FILES="shejul_shubham_mern.tex shejul_shubham_react.tex"
+          
+          for f in $FILES; do
+            if [ -f "$f" ]; then
+              BASENAME=$(basename "$f" .tex)
+              echo "Compiling $f"
+              latexmk -pdf -interaction=nonstopmode -halt-on-error "$f"
+              mv "${BASENAME}.pdf" "build/${BASENAME}.pdf"
+              latexmk -c "$f"
+            fi
+          done
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          # optionally set user/email for commit
+          commit_message: "Auto publish CVs: ${{ github.sha }}"
