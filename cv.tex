@@ -26,15 +26,7 @@
 %----------------------------------------------------------------------------------------
 
 % article class because we want to fully customize the page and not use a cv template
-\documentclass[a4paper,12pt]{article}
-
-\makeatletter
-\def\input@path{{./}{texmf/tex/latex/fontawesome5/}{texmf/tex/latex/fontawesome5/tex/}}
-\makeatother
-
-\usepackage{fontspec}
-\usepackage{fontawesome5}
-
+\documentclass[a4paper,11pt]{article}
 
 %----------------------------------------------------------------------------------------
 %	FONT
@@ -149,12 +141,13 @@
 % \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
 % \end{tabularx}
 
+
 \begin{tabularx}{\linewidth}{@{} C @{}}
 \Huge{Shubham Shejul} \\[7.5pt]
-\href{https://github.com/shejulshubham}{\raisebox{-0.05\height}\faGithub\ shejulshubham} \ $|$ \ 
-\href{https://www.linkedin.com/in/shejul-shubham}{\raisebox{-0.05\height}\faLinkedin\ shejul-shubham} \ $|$ \ 
-\href{https://shejulshubham.github.io/}{\raisebox{-0.05\height}\faGlobe \ shejulshubham.github.io} \\[3pt]
-\href{mailto:shejulshubhamdeshmukh@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ shejulshubhamdeshmukh@gmail.com} \ $|$ \ 
+\href{https://github.com/shejulshubham}{\raisebox{-0.05\height}\faGithub\ shejulshubham} \ $|$ \ 
+\href{https://www.linkedin.com/in/shejul-shubham}{\raisebox{-0.05\height}\faLinkedin\ shejul-shubham} \ $|$ \ 
+\href{https://shejulshubham.github.io/}{\raisebox{-0.05\height}\faGlobe \ shejulshubham} \ $|$ \
+\href{mailto:shejulshubhamdeshmukh@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ shejulshubhamdeshmukh@gmail.com} \\[3pt] $|$ \  
 \href{tel:+919923195165}{\raisebox{-0.05\height}\faMobile \ +91 9923195165} \\
 \small{Pune, Maharashtra, India}
 \end{tabularx}
@@ -165,44 +158,53 @@
 %----------------------------------------------------------------------------------------
 
 %Interests/ Keywords/ Summary
+%----------------------------------------------------------------------------------------
+%	SUMMARY
+%----------------------------------------------------------------------------------------
 \section{Summary}
-Software Developer specializing in web development with a strong foundation in full-stack development and modern web technologies. Skilled in JavaScript, React.js, and relational databases.
+Software Developer specializing in web development with a strong foundation in full-stack development and modern web technologies. Skilled in JavaScript, React.js, Node.js and relational databases.
 
 
-%Experience
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE
+%----------------------------------------------------------------------------------------
 \section{Work Experience}
 
 \begin{joblong}{Software Development Intern — \href{https://www.zeromoq.com/}{ZeroMOQ}}{Sept 2025 - present}
-\item Built and maintained backend services using Python and Django, ensuring scalable and secure architecture.
-\item Integrated AWS S3 for efficient file storage and retrieval, supporting large 3D model files.
+% This line provides the context (Mentorship tip)
+\item[] \textit{\footnotesize A web platform for converting 3D models into real word products.} \vspace{2pt}
+\item Managed website hosting infrastructure on \textbf{VapourHost} platform with 95\% uptime.
+\item Engineered a custom \textbf{caching mechanism} to securely retrieving 3D models, solving high-latency data retrieval issues and improving application response time by $\sim$30\%.
+\item Established a robust testing culture by implementing comprehensive \textbf{Unit} and \textbf{End-to-End (E2E)} tests, minimizing regression bugs and ensuring reliability for critical workflows.
 \end{joblong}
 
-  
-%Projects
+%----------------------------------------------------------------------------------------
+%	PROJECTS
+%----------------------------------------------------------------------------------------
 \section{Projects}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Emprog — Show \& Movie Tracker} & \hfill \href{https://shejulshubham-app-emprog.netlify.app/}{Live} \ | \ \href{https://github.com/ShejulShubham/Emprog}{GitHub} \\[2pt]
+\textbf{Emprog — Media Tracking Application} & \hfill \href{https://shejulshubham-app-emprog.netlify.app/}{Live} \ | \ \href{https://github.com/ShejulShubham/Emprog}{GitHub} \\[2pt]
 \multicolumn{2}{@{}X@{}}{\textit{React.JS, Firebase, TailwindCSS, Zustand}} \\
 \multicolumn{2}{@{}X@{}}{
-\begin{itemize}[leftmargin=1em, itemsep=1pt, parsep=0pt, topsep=2pt, partopsep=0pt, label=--]
-\item Developed a modern web app to track shows, movies, and videos with a clean, responsive interface.
-\item Implemented Firebase Authentication with persistent login and protected routes for secure user access.
-\item Utilized Zustand for lightweight global state management and seamless integration with Firebase.
+\begin{itemize}[leftmargin=1em, itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt, label=--]
+\item Developed a responsive, mobile-first Single Page Application (SPA) using \textbf{TailwindCSS} to track media consumption across devices.
+\item Implemented \textbf{Zustand} for optimized global state management and \textbf{Firebase} for real-time data synchronization, ensuring instant updates for users.
 \end{itemize}} \\
 \end{tabularx}
 
+\vspace{0pt}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Ai.local — Local AI Chatbot System} & \hfill \href{https://github.com/ShejulShubham/ai.local}{GitHub} \\[2pt]
-\multicolumn{2}{@{}X@{}}{\textit{Ollama, Docker, Nginx, Open WebUI, WSL}} \\
-\multicolumn{2}{@{}X@{}}{
-\begin{itemize}[leftmargin=1em, itemsep=1pt, parsep=0pt, topsep=2pt, partopsep=0pt, label=--]
-\item Built dual deployment architectures for Linux and Windows (with WSL), ensuring cross-platform compatibility.
-\item Configured Nginx as a reverse proxy to handle client requests and route traffic between the frontend and Ollama.
-\end{itemize}} \\
+\textbf{Exrupee — Subscription Tracker} & \hfill \href{https://shejulshubham-app-exrupee.netlify.app/}{Live} \ | \ \href{https://github.com/ShejulShubham/Exrupee.git}{GitHub} \\[1pt]
+\multicolumn{2}{@{}X@{}}{\footnotesize \textit{Next.JS, Firebase, FantaCSS}} \\
 \end{tabularx}
-
+\vspace{0pt}
+\begin{itemize}[noitemsep, topsep=0pt, parsep=0pt, partopsep=0pt, leftmargin=1.5em, label=--]
+\item Engineered a high-performance financial dashboard using \textbf{Next.js App Router}, leveraging Server Components to optimize page load latency.
+\item Architected a real-time data synchronization layer with \textbf{Cloud Firestore}, ensuring immediate state consistency across devices without manual refreshes.
+\end{itemize}
+\vspace{0pt}
 
 
 %----------------------------------------------------------------------------------------
