@@ -26,7 +26,16 @@
 %----------------------------------------------------------------------------------------
 
 % article class because we want to fully customize the page and not use a cv template
-\documentclass[a4paper,11pt]{article}
+\documentclass[a4paper,11pt]{article} 
+
+\makeatletter
+\def\input@path{{./}{texmf/tex/latex/fontawesome5/}{texmf/tex/latex/fontawesome5/tex/}}
+\makeatother
+
+\usepackage{fontspec}
+\usepackage{fontawesome5}
+
+
 
 %----------------------------------------------------------------------------------------
 %	FONT
