@@ -10,6 +10,15 @@ This repository automatically builds and publishes my latest resumes using **LaT
 
 ---
 
+### 🖱️ Resume Link
+
+```text
+https://shejulshubham.github.io/resume/cv.pdf
+```
+
+
+---
+
 ### ⚙️ AutoCV Setup Summary
 
 - Uses GitHub Actions to compile `cv.tex` and `cv_2.tex` with XeLaTeX.
