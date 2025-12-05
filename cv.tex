@@ -26,7 +26,7 @@
 %----------------------------------------------------------------------------------------
 
 % article class because we want to fully customize the page and not use a cv template
-\documentclass[a4paper,11pt]{article} 
+\documentclass[a4paper,11pt]{article}
 
 \makeatletter
 \def\input@path{{./}{texmf/tex/latex/fontawesome5/}{texmf/tex/latex/fontawesome5/tex/}}
@@ -97,6 +97,8 @@
 \usepackage[unicode, draft=false]{hyperref}
 \definecolor{linkcolour}{rgb}{0,0.2,0.6}
 \hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\addbibresource{citations.bib}
+\setlength\bibitemsep{1em}
 
 %for social icons
 \usepackage{fontawesome5}
@@ -154,10 +156,11 @@
 \href{https://github.com/shejulshubham}{\raisebox{-0.05\height}\faGithub\ shejulshubham} \textbar\ 
 \href{https://www.linkedin.com/in/shejul-shubham}{\raisebox{-0.05\height}\faLinkedin\ shejul-shubham} \textbar\ 
 \href{https://shejulshubham.github.io/}{\raisebox{-0.05\height}\faGlobe\ shejulshubham} \textbar\ 
-\href{mailto:shejulshubhamdeshmukh@gmail.com}{\raisebox{-0.05\height}\faEnvelope\ shejulshubhamdeshmukh@gmail.com} \textbar\ \\
+\href{mailto:shejulshubhamdeshmukh@gmail.com}{\raisebox{-0.05\height}\faEnvelope\ shejulshubhamdeshmukh@gmail.com} \\
 \href{tel:+919923195165}{\raisebox{-0.05\height}\faMobile\ +91 9923195165} \textbar\
 \small{Pune, Maharashtra, India}
 \end{tabularx}
+
 
 
 %----------------------------------------------------------------------------------------
@@ -191,7 +194,7 @@ Software Developer specializing in web development with a strong foundation in f
 \section{Projects}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Emprog — Media Tracking Application} & \hfill \href{https://shejulshubham-app-emprog.netlify.app/}{Live} \ | \ \href{https://github.com/ShejulShubham/Emprog}{GitHub} \\[2pt]
+\textbf{Emprog — Media Tracking Application} & \hfill \href{https://emprog.netlify.app/}{Live} \ | \ \href{https://github.com/ShejulShubham/Emprog}{GitHub} \\[2pt]
 \multicolumn{2}{@{}X@{}}{\textit{React.JS, Firebase, TailwindCSS, Zustand}} \\
 \multicolumn{2}{@{}X@{}}{
 \begin{itemize}[leftmargin=1em, itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt, label=--]
@@ -203,15 +206,15 @@ Software Developer specializing in web development with a strong foundation in f
 \vspace{0pt}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Exrupee — Subscription Tracker} & \hfill \href{https://shejulshubham-app-exrupee.netlify.app/}{Live} \ | \ \href{https://github.com/ShejulShubham/Exrupee.git}{GitHub} \\[1pt]
-\multicolumn{2}{@{}X@{}}{\footnotesize \textit{Next.JS, Firebase, FantaCSS}} \\
+\textbf{Ai.local — Local AI Chatbot System} & \hfill \href{https://github.com/ShejulShubham/ai.local}{GitHub} \\[1pt]
+\multicolumn{2}{@{}X@{}}{\footnotesize \textit{Ollama, Docker, Nginx, Open WebUI, WSL}} \\
 \end{tabularx}
-\vspace{0pt}
+\vspace{-6pt}
 \begin{itemize}[noitemsep, topsep=0pt, parsep=0pt, partopsep=0pt, leftmargin=1.5em, label=--]
-\item Engineered a high-performance financial dashboard using \textbf{Next.js App Router}, leveraging Server Components to optimize page load latency.
-\item Architected a real-time data synchronization layer with \textbf{Cloud Firestore}, ensuring immediate state consistency across devices without manual refreshes.
+\item Architected a privacy-first AI environment using \textbf{Ollama} and \textbf{Docker}, ensuring \textbf{100\% data sovereignty} by processing all inference locally without external API dependencies.
+\item Orchestrated multi-container deployment using \textbf{Docker Compose} and \textbf{Nginx} reverse proxying, consolidating frontend and backend traffic into a single endpoint for a seamless user experience.
 \end{itemize}
-\vspace{0pt}
+\vspace{2pt}
 
 
 %----------------------------------------------------------------------------------------
@@ -231,13 +234,13 @@ Software Developer specializing in web development with a strong foundation in f
 %----------------------------------------------------------------------------------------
 \section{Technical Skills}
 \begin{tabularx}{\linewidth}{@{}l X@{}}
-Frameworks \& Libraries & ReactJS, NodeJS \\[3pt]
-Databases & MySQL \\[3pt]
-Version Control & Git, GitHub \\[3pt]
-Programming Languages & JavaScript (Proficient), Java (Moderate), C++ (Basic)
+\textbf{Languages} & JavaScript, Python, Java, SQL \\[3pt]
+\textbf{Frontend} & React.js, Tailwind CSS, Zustand \\[3pt]
+\textbf{Backend \& APIs} & Node.js, Django, RESTful APIs, MySQL, Firebase \\[3pt]
+\textbf{DevOps \& Tools} & Docker, Nginx, Git, GitHub, AWS S3, VapourHost
 \end{tabularx}
 
 \vfill
-\center{\footnotesize Last updated: \today}
+% \center{\footnotesize Last updated: \today}
 
 \end{document}
