@@ -28,10 +28,20 @@ jobs:
 
 
 
-      - name: Compile all resumes
+      - name: Compile all resumes and prepare site
         run: |
           set -e
           mkdir -p build
+
+          # --- NEW STEP: Copy index.html to build folder ---
+          if [ -f "index.html" ]; then
+            echo "Copying index.html to build directory..."
+            cp index.html build/
+          else
+            echo "Warning: index.html not found in root directory."
+          fi
+          # -------------------------------------------------
+
           # list of tex files (edit this list to add/remove resumes)
           FILES=$(ls *.tex)
           
