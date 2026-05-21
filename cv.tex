@@ -28,15 +28,6 @@
 % article class because we want to fully customize the page and not use a cv template
 \documentclass[a4paper,11pt]{article}
 
-\makeatletter
-\def\input@path{{./}{texmf/tex/latex/fontawesome5/}{texmf/tex/latex/fontawesome5/tex/}}
-\makeatother
-
-\usepackage{fontspec}
-\usepackage{fontawesome5}
-
-
-
 %----------------------------------------------------------------------------------------
 %	FONT
 %----------------------------------------------------------------------------------------
@@ -97,8 +88,6 @@
 \usepackage[unicode, draft=false]{hyperref}
 \definecolor{linkcolour}{rgb}{0,0.2,0.6}
 \hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
-\addbibresource{citations.bib}
-\setlength\bibitemsep{1em}
 
 %for social icons
 \usepackage{fontawesome5}
@@ -180,14 +169,21 @@ Software Developer specializing in web development with a strong foundation in f
 %----------------------------------------------------------------------------------------
 \section{Work Experience}
 
-\begin{joblong}{Software Development Intern — \href{https://www.zeromoq.com/}{ZeroMOQ}}{Sept 2025 - present}
+\begin{joblong}{Frontend Developer — \href{https://www.amuratech.com/}{Amura}}{Feb 2026 - Apr 2026}
+% This line provides the context (Mentorship tip)
+\item[] \textit{\footnotesize A leading digital marketing agency.} \vspace{2pt}
+\item Developed high-fidelity, pixel-perfect user interfaces across \textbf{WordPress}, \textbf{Shopify}, and \textbf{CodeIgniter (PHP)} platforms, strictly adhering to complex Figma design specifications.
+\item Ensured seamless cross-platform compatibility by engineering robust layouts responsive across major breakpoints, including standard \textbf{Windows/Mac desktops} (up to 1920x1080), \textbf{iPads}, and diverse \textbf{mobile device widths}.
+\item Worked on custom \textbf{WordPress plugin} utilizing \textbf{React} to develop dynamic, modular, and highly reusable frontend components, enhancing UI flexibility and performance.
+\end{joblong}
+
+\begin{joblong}{Software Development Intern — \href{https://www.zeromoq.com/}{ZeroMOQ}}{Sept 2025 - Jan 2026}
 % This line provides the context (Mentorship tip)
 \item[] \textit{\footnotesize A web platform for converting 3D models into real world products.} \vspace{2pt}
 \item Managed website hosting infrastructure on \textbf{VapourHost} platform with 95\% uptime.
 \item Engineered a custom \textbf{caching mechanism} to securely retrieving 3D models, solving high-latency data retrieval issues and improving application response time by $\sim$30\%.
 \item Established a robust testing culture by implementing comprehensive \textbf{Unit} and \textbf{End-to-End (E2E)} tests, minimizing regression bugs and ensuring reliability for critical workflows.
 \end{joblong}
-
 %----------------------------------------------------------------------------------------
 %	PROJECTS
 %----------------------------------------------------------------------------------------
@@ -205,16 +201,16 @@ Software Developer specializing in web development with a strong foundation in f
 
 \vspace{0pt}
 
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Ai.local — Local AI Chatbot System} & \hfill \href{https://github.com/ShejulShubham/ai.local}{GitHub} \\[1pt]
-\multicolumn{2}{@{}X@{}}{\footnotesize \textit{Ollama, Docker, Nginx, Open WebUI, WSL}} \\
-\end{tabularx}
-\vspace{-6pt}
-\begin{itemize}[noitemsep, topsep=0pt, parsep=0pt, partopsep=0pt, leftmargin=1.5em, label=--]
-\item Architected a privacy-first AI environment using \textbf{Ollama} and \textbf{Docker}, ensuring \textbf{100\% data sovereignty} by processing all inference locally without external API dependencies.
-\item Orchestrated multi-container deployment using \textbf{Docker Compose} and \textbf{Nginx} reverse proxying, consolidating frontend and backend traffic into a single endpoint for a seamless user experience.
-\end{itemize}
-\vspace{2pt}
+% \begin{tabularx}{\linewidth}{ @{}l r@{} }
+% \textbf{Ai.local — Local AI Chatbot System} & \hfill \href{https://github.com/ShejulShubham/ai.local}{GitHub} \\[1pt]
+% \multicolumn{2}{@{}X@{}}{\footnotesize \textit{Ollama, Docker, Nginx, Open WebUI, WSL}} \\
+% \end{tabularx}
+% \vspace{-6pt}
+% \begin{itemize}[noitemsep, topsep=0pt, parsep=0pt, partopsep=0pt, leftmargin=1.5em, label=--]
+% \item Architected a privacy-first AI environment using \textbf{Ollama} and \textbf{Docker}, ensuring \textbf{100\% data sovereignty} by processing all inference locally without external API dependencies.
+% \item Orchestrated multi-container deployment using \textbf{Docker Compose} and \textbf{Nginx} reverse proxying, consolidating frontend and backend traffic into a single endpoint for a seamless user experience.
+% \end{itemize}
+% \vspace{2pt}
 
 
 %----------------------------------------------------------------------------------------
