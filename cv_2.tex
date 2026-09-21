@@ -1,187 +1,213 @@
-\documentclass[]{deedy-resume-reversed}
-\usepackage{graphicx}
-\usepackage{fancyhdr}
-\usepackage[hidelinks]{hyperref}
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2021 Jitin Nair
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
 
-\pagestyle{fancy}
-\fancyhf{}
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
 
-\hypersetup{
-    colorlinks=true,
-    linkcolor=blue,
-    filecolor=magenta,
-    urlcolor=blue, % Ensures email and website links are blue
-    citecolor=blue,
-    allcolors=blue % Forces all links to be blue
-}
+% article class because we want to fully customize the page and not use a cv template
+\documentclass[a4paper,11pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% % fontspec allows you to use TTF/OTF fonts directly
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+% % modified for ShareLaTeX use
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+%for publications
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+
+%for social icons
+\usepackage{fontawesome5}
+
+%debug page outer frames
+%\usepackage{showframe}
 
 
+% job listing environments
+\newenvironment{jobshort}[2]
+    {
+    \begin{tabularx}{\linewidth}{@{}l X r@{}}
+    \textbf{#1} & \hfill &  #2 \\[3.75pt]
+    \end{tabularx}
+    }
+    {
+    }
+
+\newenvironment{joblong}[2]
+    {
+    \begin{tabularx}{\linewidth}{@{}l X r@{}}
+    \textbf{#1} & \hfill &  #2 \\[3.75pt]
+    \end{tabularx}
+    \begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
+    }
+    {
+    \end{itemize}
+    \end{minipage}    
+    }
+
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
 \begin{document}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     TITLE NAME
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% non-numbered pages
+\pagestyle{empty} 
 
-\namesection{Shubham Shejul}{
-\href{mailto:shejulshubhamdeshmukh@gmail.com}{shejulshubhamdeshmukh@gmail.com} | +91 9923195165 | Pune, Maharashtra
-}
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     COLUMN ONE (MAIN SECTION)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{Shubham Shejul} \\[7.5pt]
+\href{https://www.linkedin.com/in/shejul-shubham}{\raisebox{-0.05\height}\faLinkedin\ shejul-shubham} \textbar\ 
+\href{mailto:shejulshubhamdeshmukh@gmail.com}{\raisebox{-0.05\height}\faEnvelope\ shejulshubhamdeshmukh@gmail.com} \\
+\href{tel:+919923195165}{\raisebox{-0.05\height}\faMobile\ +91 9923195165} \textbar\
+\small{Pune, Maharashtra, India}
+\end{tabularx}
 
-\begin{minipage}[t]{0.60\textwidth}
+%----------------------------------------------------------------------------------------
+%	SUMMARY
+%----------------------------------------------------------------------------------------
+\section{Summary}
+I am a Civil Engineer with a B.Tech and a Diploma qualifications. I have practical experience in soil testing, building blueprints, site work, and sustainable construction. I am proficient in AutoCAD and Excel, and I help teams with project planning and on-site execution.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     ABOUT ME
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\vspace{0pt}
+\section{Education}
+\begin{tabularx}{\linewidth}{@{} l X r @{}}
+\textbf{Qualification} & \textbf{Institution} & \textbf{Year} \\[3pt]
+\hline \vspace{-6pt} \\
+B.Tech in Civil Engineering & MIT College of Engineering, Chh. Sambhajinagar & 2020 -- 2023 \\[3pt]
+Diploma in Civil Engineering & MIT College of Polytechnic, Chh. Sambhajinagar & 2018 -- 2020 \\
+\end{tabularx}
 
-\section{\textbf{About Me}}
-\noindent\rule{\textwidth}{0.4pt}
-Software Developer specializing in web development with a strong foundation in full-stack development and modern web technologies. Skilled in JavaScript, React.js, and relational databases.
-\sectionsep
+%----------------------------------------------------------------------------------------
+%	PROJECTS
+%----------------------------------------------------------------------------------------
+\vspace{0pt} 
+\section{Projects}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     INTERNSHIP
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\fontsize{11.5pt}{14pt}\selectfont % <-- Adjust points here (e.g., 11.5pt text with 14pt line height
 
-\section{\textbf{Internship}}
-\noindent\rule{\textwidth}{0.4pt}
-
-\runsubsection{Software Development Intern}
-\hfill
-\descript{\href{https://www.zeromoq.com/}{ZeroMOQ}}
-\location{| Remote Internship}
-\vspace{2pt}
-
-\vspace{8pt}
-\begin{tightemize}
-\item Built and maintained backend services using Python and Django, ensuring scalable and secure architecture.
-\item Integrated AWS S3 for efficient file storage and retrieval, supporting large 3D model files.
-\item Collaborated with the founding team and software lead to align product development with business goals.
-\end{tightemize}
-\sectionsep
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     PROJECTS
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{\textbf{Projects}}
-\noindent\rule{\textwidth}{0.4pt}
-
-\runsubsection{Emprog - Show \& Movie Tracker}
-\hfill
-\href{https://shejulshubham-app-emprog.netlify.app/}{Live} \hspace{15pt}
-\href{https://github.com/ShejulShubham/Emprog}{GitHub}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Transforming an Existing Building into a Self-Sufficient Building} & \hfill \textit{June 2022 -- March 2023} \\[1pt]
+\multicolumn{2}{@{}X@{}}{\textit{B.Tech Major Project — Sustainable Building Design \& Resource Management}} \\
+\multicolumn{2}{@{}X@{}}{
+\begin{itemize}[leftmargin=1em, itemsep=-1pt, parsep=0pt, topsep=1pt, partopsep=0pt, label=--]
+\item Assessed the building's energy and resource use to identify major inefficiencies.
+\item Designed sustainable upgrades for energy conservation, rainwater harvesting, and waste reduction.
+\item Evaluated solar and renewable energy setups to cut reliance on the main power grid.
+\item Redesigned layouts with passive features to maximize natural airflow and daylight.
+\end{itemize}} \\
+\end{tabularx}
 
 \vspace{2pt}
-\descript{| React.JS, Firebase, TailwindCSS, Zustand}
 
-\vspace{8pt}
-\begin{tightemize}
-\item Developed a modern web app to track shows, movies, and videos with a clean, responsive interface.
-\item Implemented Firebase Authentication with persistent login and protected routes for secure user access.
-\item Utilized Zustand for lightweight global state management and seamless integration with Firebase.
-\item Designed a mobile-first, responsive UI using TailwindCSS for an optimized user experience.
-\end{tightemize}
-\sectionsep
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Effect of Reinforcement on CBR Values of Soil} & \hfill \textit{June 2019 -- March 2020} \\[1pt]
+\multicolumn{2}{@{}X@{}}{\textit{Diploma Major Project — Geotechnical Engineering \& Soil Mechanics}} \\
+\multicolumn{2}{@{}X@{}}{
+\begin{itemize}[leftmargin=1em, itemsep=-1pt, parsep=0pt, topsep=1pt, partopsep=0pt, label=--]
+\item Tested mechanical stabilization methods using composite materials on expansive clay subgrade (black cotton soil).
+\item Ran laboratory California Bearing Ratio (CBR) tests to assess soil strength and load capacity.
+\item Tested 1 to 4 reinforcement layers to find the most stable and cost-effective layout.
+\item Showed that adding polypropylene fibers reduced soil settlement and improved load spread.
+\end{itemize}} \\
+\end{tabularx}
 
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+\vspace{-4pt}
+\section{Technical Skills}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+\textbf{Engineering Software} & AutoCAD, Microsoft Excel  \\[2pt]
+\end{tabularx}
 
-\runsubsection{Exrupee - Subscription Tracker}
-\hfill
-\href{https://shejulshubham-app-exrupee.netlify.app/}{Live} \hspace{15pt}
-\href{https://github.com/ShejulShubham/Exrupee.git}{GitHub}
+%----------------------------------------------------------------------------------------
+%	CERTIFICATIONS
+%----------------------------------------------------------------------------------------
+\vspace{0pt}
+\section{Certifications}
+\begin{tabularx}{\linewidth}{@{}l X r@{}}
+\textbf{Microsoft Excel - Excel from Beginner to Advanced} & Udemy (Instructor: Kyle Pew) & \hfill 2021 \\
+\end{tabularx}
 
-\vspace{2pt}
-\descript{| Next.JS, Firebase, FantaCSS}
-
-\vspace{8pt}
-\begin{tightemize}
-\item Built a real-time subscription tracker using Next.js App Router for seamless page navigation.
-\item Integrated Firebase Authentication to handle secure user logins.
-\item Implemented Firestore Database to manage and sync subscription data in real-time across sessions.
-\end{tightemize}
-\sectionsep
-
-
-\runsubsection{ai.local - Local AI Chatbot System}
-\hfill
-\href{https://github.com/ShejulShubham/ai.local}{GitHub}
-
-\descript{| Ollama, Docker, Nginx, Open WebUI, WSL}
-
-\vspace{8pt}
-\begin{tightemize}
-\item Designed and implemented a local AI chatbot system using Ollama.
-\item Built dual deployment architectures for Linux and Windows (with WSL), ensuring cross-platform compatibility.
-\item Configured Nginx as a reverse proxy to handle client requests and route traffic between the frontend and Ollama.
-\end{tightemize}
-\sectionsep
-
-
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.33\textwidth}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     EDUCATION
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{\textbf{Education}}
-\noindent\rule{\textwidth}{0.4pt}
-\subsection{DAC (Web Development)}
-\location{Sunbeam Institute of Information Technology}
-\descript{2024}
-\sectionsep
-
-\subsection{B.Tech (Civil Engineering)}
-\location{MIT College of Engineering}
-\descript{2020 - 2023}
-\sectionsep
-
-\subsection{Diploma (Civil Engineering)}
-\location{MIT College of Polytechnic}
-\descript{2018 - 2020}
-\sectionsep
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     TECHNICAL SKILLS
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{\textbf{Technical Skills}}
-\noindent\rule{\textwidth}{0.4pt}
-\subsection{Frameworks \& Libraries}
-ReactJS \textbullet{} NodeJS
-\sectionsep
-
-\subsection{Databases}
-MySQL
-\sectionsep
-
-\subsection{Version Control}
-Git \textbullet{} GitHub
-\sectionsep
-
-\subsection{Programming Languages}
-JavaScript (Proficient) \\
-Java (Moderate) \\ 
-C++ (Basic) \\
-\sectionsep
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     LINKS
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{\textbf{Links} \small{(Click to explore)}}
-\noindent\rule{\textwidth}{0.4pt}
-
-\textbf{LinkedIn:} \href{https://www.linkedin.com/in/shejul-shubham}{shejul-shubham} \\
-\textbf{GitHub:} \href{https://github.com/shejulshubham}{shejulshubham} \\
-\textbf{Portfolio:} \href{https://shejulshubham.github.io/}{shejulshubham.github.io} \\
-\textbf{LeetCode:} \href{https://leetcode.com/u/ShejulShubham/}{shejulshubham}
-
-\sectionsep
-
-\end{minipage}
 \end{document}
